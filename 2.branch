@@ -1,0 +1,18 @@
+Thông thường nhánh main là production
+
+   Vấn đề khi push thẳng lên main
+1. Khi nhiêu người cùng sửa 1 file rồi commit và push -> dễ conflic
+2. Code chưa được review mà push thẳng lên main -> lỗi xung đột
+3. Nhiều commit -> git log rất rối
+4. Khi muốn roolback một tính năng cụ thể -> khó vì đã trộn lẫn vào nhau 
+
+    Giải pháp: -> branch
+1. Dùng để phát triển tính năng mới, sửa lỗi tránh xung đột ở main
+2. Mỗi nhóm làm khác tính năng nên làm việc trên nhánh riêng
+
+    Git HEAD: con trỏ cho biết vị trí hiện tại trong repo -> check bằng lệnh git log
+1. Khi commit HEAD sẽ di chuyển theo commit mới 
+3. Khi chuyển branch HEAD cũng chuyển theo
+2. Khi checkout về commit cũ -> HEAD -> thay đổi (git checkout <commit hash> | HEAD~n)
+
+    git switch -c <branch name>: tạo và chuyển sang branch mới
