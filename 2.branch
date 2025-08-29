@@ -12,7 +12,15 @@ Thông thường nhánh main là production
 
     Git HEAD: con trỏ cho biết vị trí hiện tại trong repo -> check bằng lệnh git log
 1. Khi commit HEAD sẽ di chuyển theo commit mới 
-3. Khi chuyển branch HEAD cũng chuyển theo
-2. Khi checkout về commit cũ -> HEAD -> thay đổi (git checkout <commit hash> | HEAD~n)
+2. Khi chuyển branch HEAD cũng chuyển theo
+3. Khi checkout về commit cũ (git checkout <commit hash> | HEAD~n) -> HEAD bị detach 
+    Lúc này HEAD trỏ tới commit cũ. Nếu tạo commit mới thì commit cũ sẽ là parent và không thuộc branch nào
+    Để lưu thì nên tạo branch mới 
 
     git switch -c <branch name>: tạo và chuyển sang branch mới
+    git checkout: cũng có thể làm việc với nhánh + commit + file
+
+
+    Sau khi tạo branch nếu muốn merge:c
+1. Chuyển về banch muốn merge vd test -> git merge dev (dev bị gộp vào test)
+2. Khi muốn merge vào test nhưng test có commit mới 
